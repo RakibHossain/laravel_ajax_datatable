@@ -187,7 +187,7 @@
 </div>
 
 <footer class="text-center">Bootstrap Template
-    <a target="_blank" href="http://mustafizbd.info"><strong>Mustafizur Rahman</strong></a>
+    <a target="_blank" href="http://mustafizbd.info"><strong>Rakib Hossain</strong></a>
 </footer>
 
 <script src="{{url('public/assets/js/jquery-1.12.3.min.js')}}"></script>
@@ -257,7 +257,7 @@
             }
         });
 
-        //          ---------Save Student By Ajax----------
+        // ---------Save Student By Ajax----------
         $(document).on('submit', '#studentForm', function (e) {
             var url;
             e.preventDefault(e);
