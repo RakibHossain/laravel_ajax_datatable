@@ -152,7 +152,6 @@
                                 <option value="Buddhist">Buddhist</option>
                                 <option value="Christianity">Christianity</option>
                                 <option value="Other">Other</option>
-
                             </select>
                         </div>
                     </div>
@@ -210,11 +209,9 @@
             }
         });
 
-
         function reloadTable() {
             table.api().ajax.reload(null, false); //reload dataTable by ajax
         }
-
 
         $(document).on('click', '#addStudent', function () { //Add Student Modal
             $('.modal-title').text('Add Student');
@@ -249,7 +246,6 @@
                 }
             });
         });
-
 
         $.ajaxSetup({
             headers: {
@@ -328,7 +324,6 @@
                 }
             });
         });
-
 
     });
 
