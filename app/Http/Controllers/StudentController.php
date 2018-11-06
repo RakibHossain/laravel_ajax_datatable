@@ -64,20 +64,21 @@ class StudentController extends Controller
             "recordsFiltered" => $recordsFiltered,
             "data"            => $data,
         ];
+        
         echo json_encode($output);
     }
 
     public function store(Request $request)
     {
-        $s           = new Student();
-        $s->name     = $request['name'];
-        $s->roll     = $request->roll;
-        $s->gender   = $request->gender;
-        $s->religion = $request->religion;
-        $s->date     = Carbon::now('Asia/Dhaka');
-        $s->save();
+        $student           = new Student();
+        $student->name     = $request['name'];
+        $student->roll     = $request->roll;
+        $student->gender   = $request->gender;
+        $student->religion = $request->religion;
+        $student->date     = Carbon::now('Asia/Dhaka');
+        $student->save();
         
-        if ($s->save()) 
+        if ($student->save()) 
         {
             $message = 'Data has saved successfully.';
             echo json_encode($message);
@@ -91,15 +92,15 @@ class StudentController extends Controller
 
     public function update(Request $request)
     {
-        $s           = Student::find($request->student_id);
-        $s->name     = $request->name;
-        $s->roll     = $request->roll;
-        $s->gender   = $request->gender;
-        $s->religion = $request->religion;
-        $s->date     = Carbon::now('Asia/Dhaka');
-        $s->save();
+        $student           = Student::find($request->student_id);
+        $student->name     = $request->name;
+        $student->roll     = $request->roll;
+        $student->gender   = $request->gender;
+        $student->religion = $request->religion;
+        $student->date     = Carbon::now('Asia/Dhaka');
+        $student->save();
         
-        if ($s->save()) 
+        if ($student->save()) 
         {
             $message = 'Data has updated successfully.';
             echo json_encode($message);
@@ -108,8 +109,8 @@ class StudentController extends Controller
 
     public function delete()
     {
-        $s = Student::find(request()->student_id);
-        if($s->delete()){
+        $student = Student::find(request()->student_id);
+        if($student->delete()){
             $message = 'Data has deleted';
             echo json_encode($message);
         }
@@ -118,7 +119,7 @@ class StudentController extends Controller
 
     public function view_bar_chart()
     {
-        $religion=Student::selectRaw('count(*) AS cnt, religion')->groupBy('religion')->orderBy('date', 'asc')->get();
+        $religion = Student::selectRaw('count(*) AS cnt, religion')->groupBy('religion')->orderBy('date', 'asc')->get();
         return view('chart',compact('religion'));
     }
 
