@@ -53,8 +53,8 @@ class StudentController extends Controller
             $row[] = $student->religion;
             $row[] = $student->date;
             $row[] = '
-            <a class="btn btn-info btn-xs editStudent" data-id="' . $student->student_id . '"><i class="glyphicon glyphicon-edit"></i></a>
-            <a class="btn btn-danger btn-xs deleteStudent" data-id="' . $student->student_id . '"><i class="glyphicon glyphicon-trash"></i></a>';
+            <a class="btn btn-info btn-xs editStudent" data-id="' . $student->id . '"><i class="glyphicon glyphicon-edit"></i></a>
+            <a class="btn btn-danger btn-xs deleteStudent" data-id="' . $student->id . '"><i class="glyphicon glyphicon-trash"></i></a>';
             $data[] = $row;
         }
         
